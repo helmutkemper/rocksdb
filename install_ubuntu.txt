@@ -1,0 +1,15 @@
+	
+I an use ubuntu 16.04
+
+DEBUG_LEVEL=0 make shared_lib install-shared
+In this way, the installation is already generated in the production mode.
+
+If you want to save time, you can specify the quantities of processors used in the process by passing -j[n], in my case, -j4
+
+DEBUG_LEVEL=0 make -j4 shared_lib install-shared
+In the case of ubuntu, this is sufficient, but in the case of ubuntu for docker, you should specify where the lib was installed.
+
+export LD_LIBRARY_PATH=/usr/local/lib
+
+sudo ldconfig -v
+Update caches of shared libraries
